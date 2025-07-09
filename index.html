@@ -1,9 +1,29 @@
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <title>test</title>
-  </head>
-  <body>
-    テストだよん
-  </body>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>hello</title>
+</head>
+<body>
+  <h1>あいさつアプリ</h1>
+
+  <label for="nameInput">名前を入力してください：</label>
+  <input type="text" id="nameInput" placeholder="例：たろう">
+  <button onclick="sayHello()">挨拶する</button>
+
+  <p id="greeting"></p>
+
+  <script>
+    function sayHello() {
+      const name = document.getElementById("nameInput").value;
+      const greeting = document.getElementById("greeting");
+
+      if (name.trim() !== "") {
+        greeting.textContent = `「「「${name}さん！こんにちは！」`;
+      } else {
+        greeting.textContent = "名前を入力してください。";
+      }
+    }
+  </script>
+</body>
 </html>
